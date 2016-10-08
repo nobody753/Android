@@ -1,0 +1,11 @@
+    SharedPreferences sharedpreferences;
+    public static final String MyPREFERENCES = "MyPrefs";
+    public static final String Name = "nameKey";
+    //get data
+   sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+   String  n= sharedpreferences.getString(Name,"data missing");//data missing-default value
+   //store data
+   sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+   SharedPreferences.Editor editor = sharedpreferences.edit();
+   editor.putString(Name, "string data");
+   editor.commit();
